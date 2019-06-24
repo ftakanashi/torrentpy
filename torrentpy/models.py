@@ -67,7 +67,7 @@ class Torrent(object):
 
     def _find_string(self):
         '''
-
+        A simple method used to extract a string encoded in bencode format from the header of current string stream(self.raw)
         '''
         first_column = self.raw.find(':')
         if first_column < 0:
@@ -109,7 +109,7 @@ class Torrent(object):
             _tmp += 'e'
             return _tmp
 
-        elif type(obj) is int:
+        elif type(obj) in (int, long):
             return 'i{}e'.format(obj)
 
         elif type(obj) is list:
@@ -121,3 +121,6 @@ class Torrent(object):
 
         elif type(obj) is str:
             return '{}:{}'.format(len(obj), obj)
+
+        else:
+            raise TorrentPyException('{} is a {}. Must be string, int, list or dict'.format(obj, type(obj)))

@@ -1,3 +1,4 @@
+## Introduction
 TorrentPy is a simple library that helps to load/dump information from BT torrent files.
 
 >All codes are written in Python 2.7.
@@ -13,7 +14,14 @@ I've prepared the script blur.py which can easily helps modifying the content of
 ```
 python blur.py -s /path/to/file.torrent -o /output/path/to/file.torrent -comment
 ```
-which means the script will read information from /path/to/file.torrent and modify it with random uuid.
-Then the modified content will be saved to /output/path/to/file.torrent. Argument '-comment' exploit the script to modify comment information of the torrent as well.
+which means the script will read information from `/path/to/file.torrent` and modify it with random uuid.
+Then the modified content will be saved to `/output/path/to/file.torrent`. Argument `-comment` exploit the script to modify comment information of the torrent as well.
 
 The little project is still being improved. Any comments or suggestions are welcomed.
+
+
+#### v0.0.1
+1. File tree structure of the modified torrent optimized (identical to the original structure).
+2. Long type process adaptation.
+3. Commandline tool developed (Chinese environment, Windows10). Code file is `console.py` and executive file packed by pyinstaller in directory `bin`.
+4. Other bugs fixed.
